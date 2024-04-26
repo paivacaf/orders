@@ -1,0 +1,10 @@
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\controller\OrderQueryController.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\dto\OrderResponse.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\mapper\OrderMapper.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\repository\filter\OrderFilterCriteria.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\entity\Order.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\OrderQueryServiceApplication.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\repository\OrderRepository.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\repository\specs\OrderSpecs.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\service\impl\OrderQueryServiceImpl.java
+C:\Users\charl\Downloads\vinsguru-blog-code-samples-master\architectural-pattern\order-query-service\src\main\java\br\com\nomadit\order\service\OrderQueryService.java

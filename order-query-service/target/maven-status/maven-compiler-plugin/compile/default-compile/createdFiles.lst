@@ -1,0 +1,13 @@
+br\com\nomadit\order\entity\Order.class
+br\com\nomadit\order\repository\filter\OrderFilterCriteria.class
+br\com\nomadit\order\mapper\OrderMapper.class
+br\com\nomadit\order\dto\OrderResponse.class
+br\com\nomadit\order\OrderQueryServiceApplication.class
+br\com\nomadit\order\service\OrderQueryService.class
+br\com\nomadit\order\controller\OrderQueryController.class
+br\com\nomadit\order\entity\Order$OrderBuilder.class
+br\com\nomadit\order\mapper\OrderMapperImpl.class
+br\com\nomadit\order\repository\OrderRepository.class
+br\com\nomadit\order\service\impl\OrderQueryServiceImpl.class
+br\com\nomadit\order\repository\filter\OrderFilterCriteria$OrderFilterCriteriaBuilder.class
+br\com\nomadit\order\repository\specs\OrderSpecs.class
