@@ -4,7 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Setter
 @Getter
@@ -21,7 +21,7 @@ public class Order {
     @Column(name = "control_number")
     private String controlNumber;
     @Column(name = "registration_date")
-    private LocalDate registrationDate;
+    private Date registrationDate;
     @Column(name = "product_name")
     private String productName;
     @Column(name = "unit_price")
