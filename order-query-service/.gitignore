@@ -1,0 +1,12 @@
+# Arquivos e diretórios gerados automaticamente
+/target/
+/.idea/
+
+# Arquivos de log
+*.log
+
+# Arquivos de compilação
+*.class
+
+# Dependências do Maven
+/.mvn/
