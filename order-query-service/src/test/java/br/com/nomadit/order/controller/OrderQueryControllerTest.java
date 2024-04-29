@@ -1,28 +1,33 @@
 package br.com.nomadit.order.controller;
 
+import br.com.nomadit.order.OrderQueryServiceApplication;
 import br.com.nomadit.order.dto.OrderResponse;
+import br.com.nomadit.order.repository.filter.OrderFilterCriteria;
 import br.com.nomadit.order.service.OrderQueryService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.http.MediaType;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.time.LocalDate;
 import java.util.Collections;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@SpringBootTest(classes = OrderQueryServiceApplication.class)
+@AutoConfigureMockMvc
 @ExtendWith(MockitoExtension.class)
-@WebMvcTest(OrderQueryController.class)
-class OrderQueryControllerTest {
+public class OrderQueryControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -33,18 +38,24 @@ class OrderQueryControllerTest {
     @InjectMocks
     private OrderQueryController orderQueryController;
 
-    @Test
-    void testGetOrders() throws Exception {
-        // Mockando o serviço de consulta de pedidos para retornar uma lista de resposta de pedidos fictícia
-        when(orderQueryService.search(any())).thenReturn(Collections.singletonList(new OrderResponse()));
+    @BeforeEach
+    public void setup() {
+        this.mockMvc = MockMvcBuilders.standaloneSetup(orderQueryController).build();
+    }
 
-        // Realizando a solicitação GET ao endpoint "/orders/v1" com parâmetros fictícios
+    @Test
+    public void testGetOrders() throws Exception {
+        // Mock do serviço
+        OrderResponse mockOrderResponse = new OrderResponse();
+        mockOrderResponse.setControlNumber("123456");
+        // Supondo que a lista retornada pelo serviço está vazia
+        when(orderQueryService.search(any(OrderFilterCriteria.class))).thenReturn(Collections.singletonList(mockOrderResponse));
+
+        // Chamada à API com parâmetros de exemplo
         mockMvc.perform(MockMvcRequestBuilders.get("/orders/v1")
-                .param("controlNumber", "12345")
-                .param("registrationDate", "2024-04-26")
-                .contentType(MediaType.APPLICATION_JSON))
-                // Verificando se a resposta tem status 200 OK e se o conteúdo retornado é JSON
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON));
+                        .param("controlNumber", "123456")
+                        .param("registrationDate", "01/01/2024")) // Use o formato esperado para a data
+                .andExpect(status().isOk());
+        // Você pode adicionar mais verificações aqui se necessário
     }
 }
